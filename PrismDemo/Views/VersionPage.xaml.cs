@@ -2,9 +2,9 @@
 
 namespace PrismDemo.Views
 {
-    public partial class AboutPage : TabbedPage
+    public partial class VersionPage : ContentPage
     {
-        public AboutPage()
+        public VersionPage()
         {
             InitializeComponent();
         }

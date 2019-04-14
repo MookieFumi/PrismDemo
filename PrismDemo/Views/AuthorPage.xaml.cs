@@ -2,9 +2,9 @@
 
 namespace PrismDemo.Views
 {
-    public partial class AboutPage : TabbedPage
+    public partial class AuthorPage : ContentPage
     {
-        public AboutPage()
+        public AuthorPage()
         {
             InitializeComponent();
         }

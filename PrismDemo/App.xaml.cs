@@ -1,6 +1,6 @@
 ﻿using Prism;
 using Prism.Ioc;
-using PrismDemo.ViewModels;
+using PrismDemo.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,8 +25,10 @@ namespace PrismDemo
             containerRegistry.RegisterForNavigation<NavigationPage>();
 
             containerRegistry.RegisterForNavigation<Views.MainPage>();
-            containerRegistry.RegisterForNavigation<Views.AboutPage, AboutPageViewModel>();
-            containerRegistry.RegisterForNavigation<Views.ConfigurationPage>();
+            containerRegistry.RegisterForNavigation<AboutPage>();
+            containerRegistry.RegisterForNavigation<AuthorPage>();
+            containerRegistry.RegisterForNavigation<VersionPage>();
+            containerRegistry.RegisterForNavigation<ConfigurationPage>();
         }
 
         protected override void OnStart()

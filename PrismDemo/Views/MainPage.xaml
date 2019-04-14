@@ -10,8 +10,10 @@
             Text="Welcome to Xamarin.Forms with Prism!"
             HorizontalOptions="Center"
             VerticalOptions="CenterAndExpand" />
+        <Button Text="Go to About (Absolute)" Command="{Binding GotoAboutAbsoluteCommand}"/>
         <Button Text="Go to About" Command="{Binding GotoAboutCommand}"/>
-        <Button Text="Go to About  (Absolute)" Command="{Binding GotoAboutAbsoluteCommand}"/>
+        <Button Text="Go to Author (Tabbed)" Command="{Binding GotoAuthorCommand}"/>
+        <Button Text="Go to Version (Tabbed)" Command="{Binding GotoVersionCommand}"/>
         <Button Text="Go to Configuration  (Modal)" Command="{Binding GotoConfigurationCommand}"/>
     </StackLayout>
 </ContentPage>
