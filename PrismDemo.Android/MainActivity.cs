@@ -14,7 +14,7 @@ namespace PrismDemo.Droid
 
             base.OnCreate(savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            LoadApplication(new App(new AndroidInitializer()));
         }
     }
 }

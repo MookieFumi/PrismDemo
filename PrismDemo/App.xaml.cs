@@ -1,31 +1,44 @@
-﻿using Xamarin.Forms;
+﻿using Prism;
+using Prism.Ioc;
+using PrismDemo.ViewModels.Base;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PrismDemo
 {
-    public partial class App : Application
+    public partial class App
     {
-        public App()
+        public App() : this(null) { }
+
+        public App(IPlatformInitializer initializer) : base(initializer) { }
+
+        protected override async void OnInitialized()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
-        protected override void OnStart()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // Handle when your app starts
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<Views.MainPage, MainPageViewModel>();
         }
 
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
+        //protected override void OnStart()
+        //{
+        //    // Handle when your app starts
+        //}
 
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
-        }
+        //protected override void OnSleep()
+        //{
+        //    // Handle when your app sleeps
+        //}
+
+        //protected override void OnResume()
+        //{
+        //    // Handle when your app resumes
+        //}
     }
 }

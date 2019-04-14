@@ -19,7 +19,7 @@ namespace PrismDemo.iOS
         public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
             Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(uiApplication, launchOptions);
         }
