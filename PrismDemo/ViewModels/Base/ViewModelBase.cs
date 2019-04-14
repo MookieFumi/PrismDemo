@@ -3,7 +3,7 @@ using Prism.Navigation;
 
 namespace PrismDemo.ViewModels.Base
 {
-    public class ViewModelBase : BindableBase, INavigationAware, IDestructible, IConfirmNavigation
+    public class ViewModelBase : BindableBase, INavigationAware, IDestructible
     {
         protected readonly INavigationService NavigationService;
 
@@ -24,24 +24,19 @@ namespace PrismDemo.ViewModels.Base
             //throw new NotImplementedException();
         }
 
-        public void OnNavigatedFrom(INavigationParameters parameters)
+        public virtual void OnNavigatedFrom(INavigationParameters parameters)
         {
             //throw new NotImplementedException();
         }
 
-        public void OnNavigatedTo(INavigationParameters parameters)
+        public virtual void OnNavigatedTo(INavigationParameters parameters)
         {
             //throw new NotImplementedException();
         }
 
-        public void OnNavigatingTo(INavigationParameters parameters)
+        public virtual void OnNavigatingTo(INavigationParameters parameters)
         {
             //throw new NotImplementedException();
-        }
-
-        public virtual bool CanNavigate(INavigationParameters parameters)
-        {
-            return true;
         }
     }
 }

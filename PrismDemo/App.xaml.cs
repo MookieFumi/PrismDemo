@@ -1,6 +1,6 @@
 ﻿using Prism;
 using Prism.Ioc;
-using PrismDemo.ViewModels.Base;
+using PrismDemo.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,28 +17,31 @@ namespace PrismDemo
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(Views.MainPage)}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<Views.MainPage, MainPageViewModel>();
+
+            containerRegistry.RegisterForNavigation<Views.MainPage>();
+            containerRegistry.RegisterForNavigation<Views.AboutPage, AboutPageViewModel>();
+            containerRegistry.RegisterForNavigation<Views.ConfigurationPage>();
         }
 
-        //protected override void OnStart()
-        //{
-        //    // Handle when your app starts
-        //}
+        protected override void OnStart()
+        {
+            // Handle when your app starts
+        }
 
-        //protected override void OnSleep()
-        //{
-        //    // Handle when your app sleeps
-        //}
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
 
-        //protected override void OnResume()
-        //{
-        //    // Handle when your app resumes
-        //}
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
+        }
     }
 }
